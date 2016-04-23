@@ -1,8 +1,8 @@
-# Maintainer: Eryla
+# Maintainer: gyaru
 pkgname=termite-w3mfix
-pkgver=10
+pkgver=11
 pkgrel=1
-pkgdesc="A simple VTE-based terminal with a lazy fix for w3m support."
+pkgdesc="A simple VTE-based terminal with a lazy fix for w3m support. (transparency removed)"
 _gitname="termite"
 arch=('i686' 'x86_64')
 url="https://github.com/thestinger/termite/"
