@@ -1,0 +1,24 @@
+pkgname=ttf-ricty-fira
+pkgver=1
+pkgrel=1
+pkgdesc='Ricty Diminished with patched FiraCode ligatures.'
+arch=('any')
+url='https://github.com/hakatashi/RictyDiminished-with-FiraCode'
+depends=('fontconfig' 'xorg-fonts-encodings' 'xorg-font-utils')
+
+_raw="https://github.com/hakatashi/RictyDiminished-with-FiraCode/releases/download/0.0.1"
+
+source=("${_raw}/RictyDiminished-with-FiraCode-Regular.ttf"
+        "${_raw}/RictyDiminished-with-FiraCode-Bold.ttf"
+        "${_raw}/RictyDiminishedDiscord-with-FiraCode-Regular.ttf"
+        "${_raw}/RictyDiminishedDiscord-with-FiraCode-Bold.ttf")
+
+sha256sums=('175e191755d2a73c56f19dc3a8a75550c279b16d80ad12374ba0815478f84c88'
+            'd149c211841e654de3a289e88b990229fb9053938497f4a75e7791ec5ae358b9'
+            '987f4ddff1321301dfe780eb9e08bee6a72fe59358e999ec94bb096e9c197867'
+            '42557335d82c956b3cd55c97fa137edc6f3cba0fdcf3b909dd39002dfa434cc2')
+
+package() {
+  install -dm 755 "${pkgdir}/usr/share/fonts/TTF"
+  install -m 644 *.ttf "${pkgdir}/usr/share/fonts/TTF/"
+}
